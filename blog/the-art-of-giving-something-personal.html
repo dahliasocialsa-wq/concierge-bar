@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>The Art of Giving Something That Actually Feels Personal | Concierge Bar</title>
+<meta name="description" content="Most gifts say 'I thought of you.' The good ones say 'I noticed you.' Here's the difference — and how to build around it.">
+<link rel="canonical" href="https://concierge.bar/blog/the-art-of-giving-something-personal.html">
+<!-- Article structured data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Art of Giving Something That Actually Feels Personal",
+  "description": "Most gifts say 'I thought of you.' The good ones say 'I noticed you.'",
+  "author": { "@type": "Organization", "name": "Concierge Bar" },
+  "publisher": { "@type": "Organization", "name": "Concierge Bar", "url": "https://concierge.bar" },
+  "datePublished": "2025-03-01",
+  "dateModified": "2025-03-01"
+}
+</script>
+<!-- Open Graph -->
+<meta property="og:title" content="The Art of Giving Something That Actually Feels Personal">
+<meta property="og:description" content="Most gifts say 'I thought of you.' The good ones say 'I noticed you.'">
+<meta property="og:type" content="article">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300;1,9..144,400&family=DM+Sans:wght@200;300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/global.css">
+<style>
+
+/* ── ARTICLE HERO ── */
+.article-hero {
+  background: var(--navy); padding: 140px 48px 80px;
+  position: relative; overflow: hidden;
+}
+.article-hero::before {
+  content: ''; position: absolute; top: -100px; right: -100px;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(192,32,42,0.08) 0%, transparent 70%);
+}
+.article-breadcrumb {
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: rgba(245,230,200,0.35);
+  margin-bottom: 32px; display: flex; align-items: center; gap: 12px;
+  opacity: 0; animation: fadeUp 0.6s ease 0.1s forwards;
+}
+.article-breadcrumb a { color: inherit; text-decoration: none; transition: color 0.2s; }
+.article-breadcrumb a:hover { color: rgba(245,230,200,0.7); }
+.article-breadcrumb span { opacity: 0.4; }
+
+.article-meta-row {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 28px;
+  opacity: 0; animation: fadeUp 0.6s ease 0.2s forwards;
+}
+.article-category {
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--crimson);
+}
+.article-date {
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.15em;
+  color: rgba(245,230,200,0.35);
+}
+.article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(245,230,200,0.2); }
+
+.article-title {
+  font-family: 'Fraunces', serif; font-size: clamp(36px, 4.5vw, 64px);
+  font-weight: 300; font-style: italic; color: var(--champagne); line-height: 1.05;
+  max-width: 800px; margin-bottom: 32px;
+  opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards;
+}
+.article-title em { font-style: normal; color: var(--crimson); }
+.article-standfirst {
+  font-size: 18px; font-weight: 300; color: rgba(245,230,200,0.6);
+  line-height: 1.65; max-width: 600px;
+  opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards;
+}
+
+/* ── ARTICLE BODY ── */
+.article-layout {
+  display: grid; grid-template-columns: 1fr 320px; gap: 80px;
+  max-width: 1100px; margin: 0 auto; padding: 80px 48px 120px;
+  align-items: start;
+}
+.article-body {}
+
+/* Cover image placeholder */
+.article-cover {
+  width: 100%; aspect-ratio: 21/9; background: linear-gradient(135deg, var(--champagne) 0%, var(--butter) 60%, rgba(192,32,42,0.12) 100%);
+  margin-bottom: 56px; position: relative; overflow: hidden;
+}
+.article-cover::after {
+  content: 'Photo: Concierge Bar';
+  position: absolute; bottom: 16px; right: 20px;
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.15em;
+  color: rgba(26,43,74,0.35); text-transform: uppercase;
+}
+
+/* Article prose */
+.prose { font-size: 17px; color: var(--charcoal); line-height: 1.8; font-weight: 300; }
+.prose p { margin-bottom: 28px; }
+.prose p:first-child::first-letter {
+  font-family: 'Fraunces', serif; font-size: 4em; font-style: italic; font-weight: 300;
+  float: left; line-height: 0.75; padding-right: 12px; padding-top: 8px; color: var(--navy);
+}
+.prose h2 {
+  font-family: 'Fraunces', serif; font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 300; font-style: italic; color: var(--navy);
+  margin: 56px 0 20px; line-height: 1.2;
+}
+.prose blockquote {
+  border-left: 2px solid var(--crimson); margin: 40px 0; padding: 8px 0 8px 32px;
+  font-family: 'Fraunces', serif; font-size: clamp(18px, 2vw, 24px);
+  font-style: italic; font-weight: 200; color: var(--navy); line-height: 1.4;
+}
+.prose ul { list-style: none; margin: 0 0 28px; padding: 0; }
+.prose ul li {
+  padding-left: 24px; position: relative; margin-bottom: 12px;
+  font-size: 16px; color: var(--text-mid);
+}
+.prose ul li::before {
+  content: '—'; position: absolute; left: 0; color: var(--crimson);
+  font-family: 'DM Mono', monospace; font-size: 11px;
+}
+
+/* Article tags */
+.article-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 56px; padding-top: 40px; border-top: 1px solid rgba(26,43,74,0.08); }
+.article-tag {
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em;
+  text-transform: uppercase; border: 1px solid rgba(26,43,74,0.15);
+  color: var(--text-mid); padding: 8px 16px; text-decoration: none; transition: all 0.2s;
+}
+.article-tag:hover { background: var(--navy); color: var(--champagne); border-color: var(--navy); }
+
+/* Sidebar */
+.article-sidebar { position: sticky; top: 96px; }
+.sidebar-card {
+  background: var(--cream-mid); padding: 32px; margin-bottom: 3px;
+}
+.sidebar-card-label {
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--crimson); margin-bottom: 16px; display: block;
+}
+.sidebar-card-heading { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 300; font-style: italic; color: var(--navy); margin-bottom: 12px; line-height: 1.2; }
+.sidebar-card p { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 20px; }
+
+/* Related posts */
+.related-post { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid rgba(26,43,74,0.08); }
+.related-post:last-child { border-bottom: none; padding-bottom: 0; }
+.related-thumb { width: 64px; height: 64px; flex-shrink: 0; background: var(--champagne); }
+.related-t1 { background: linear-gradient(135deg, var(--champagne), var(--butter)); }
+.related-t2 { background: linear-gradient(135deg, #E8D5C0, #D4A99A); }
+.related-t3 { background: linear-gradient(135deg, var(--navy), #1A3A5C); }
+.related-post-title { font-family: 'Fraunces', serif; font-size: 14px; font-weight: 300; font-style: italic; color: var(--navy); text-decoration: none; line-height: 1.3; display: block; margin-bottom: 6px; transition: color 0.2s; }
+.related-post-title:hover { color: var(--crimson); }
+.related-post-cat { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-light); }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .article-layout { grid-template-columns: 1fr; gap: 0; }
+  .article-sidebar { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 64px; }
+}
+@media (max-width: 768px) {
+  .article-hero { padding: 120px 24px 60px; }
+  .article-layout { padding: 60px 24px 80px; }
+  .article-sidebar { grid-template-columns: 1fr; }
+  .prose { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+
+<div id="nav-mount"></div>
+
+<!-- ── ARTICLE HERO ── -->
+<header class="article-hero">
+  <nav class="article-breadcrumb" aria-label="Breadcrumb">
+    <a href="/index.html">Home</a>
+    <span>·</span>
+    <a href="/blog.html">The Edit</a>
+    <span>·</span>
+    Gift Guides
+  </nav>
+  <div class="article-meta-row">
+    <span class="article-category">Gift Guides</span>
+    <span class="article-meta-dot"></span>
+    <span class="article-date">March 2025</span>
+    <span class="article-meta-dot"></span>
+    <span class="article-date">5 min read</span>
+  </div>
+  <h1 class="article-title">The art of giving something<br>that actually feels <em>personal</em></h1>
+  <p class="article-standfirst">Most gifts say "I thought of you." The good ones say "I noticed you." Here's the difference — and how to build around it.</p>
+</header>
+
+<!-- ── ARTICLE LAYOUT ── -->
+<div class="article-layout">
+
+  <!-- Main content -->
+  <main class="article-body">
+
+    <div class="article-cover"></div>
+
+    <article class="prose">
+      <p>There is a particular kind of disappointment in receiving a gift that is objectively fine. Nice candle. Good wine. A voucher that says "I ran out of ideas." Nothing is wrong with any of it. And yet the thing sits there, not quite landing, because it could have been for anyone.</p>
+
+      <p>The gifts we remember — the ones people bring up years later — are never the most expensive. They're the ones where someone clearly thought about us specifically. Noticed something. Remembered a detail we'd half-forgotten we'd mentioned.</p>
+
+      <h2>The difference between thinking of someone and noticing them</h2>
+
+      <p>Thinking of someone when you gift them is the minimum. It's what "I saw this and thought of you" usually means — a general association, a guess at category preference. Noticing someone is something different.</p>
+
+      <p>It's the difference between knowing someone likes cooking and knowing they've been trying to perfect a specific regional dish for the last year. Between knowing someone travels and knowing they always complain about losing their adaptor. Between knowing someone is moving house and choosing something that acknowledges the emotional weight of that, not just the logistics.</p>
+
+      <blockquote>"A gift that references a real moment lands. A gift that references a general category doesn't."</blockquote>
+
+      <p>When we take a brief at Concierge Bar, the first questions we ask are almost never about budget or occasion. They're about what the person is like. What they talk about. What they've been going through. What would make them laugh, or feel seen, or feel like someone had paid attention.</p>
+
+      <h2>Practical ways to give something personal</h2>
+
+      <p>If you're curating a gift yourself — or even just thinking through what to ask for when you commission one — these are the starting points we keep returning to:</p>
+
+      <ul>
+        <li>What has this person mentioned, even briefly, in the last six months?</li>
+        <li>What do they always forget to buy for themselves?</li>
+        <li>What would they find funny or tell a story about?</li>
+        <li>What are they going through right now, and what would acknowledge that?</li>
+        <li>Is there something specific to where they are, or where you are, that carries meaning?</li>
+      </ul>
+
+      <p>The answers to those questions are where personal gifts come from. Not from a gift guide, not from a bestseller list. From paying attention to someone over time, and then making use of that.</p>
+
+      <p>If you'd like someone to do that work for you — or with you — that's exactly what we're here for.</p>
+    </article>
+
+    <div class="article-tags">
+      <a href="/blog.html" class="article-tag">Gift Guides</a>
+      <a href="/blog.html" class="article-tag">Curation</a>
+      <a href="/blog.html" class="article-tag">Thoughtful Gifting</a>
+      <a href="/blog.html" class="article-tag">Lisbon</a>
+    </div>
+
+  </main>
+
+  <!-- Sidebar -->
+  <aside class="article-sidebar">
+
+    <div class="sidebar-card">
+      <span class="sidebar-card-label">Work with us</span>
+      <div class="sidebar-card-heading">Let us curate something for you.</div>
+      <p>Tell us the brief — who it's for, the occasion, the feeling — and we'll build around it.</p>
+      <a href="/contact.html" class="btn-primary" style="font-size:9px;">Start an enquiry</a>
+    </div>
+
+    <div class="sidebar-card" style="margin-top:3px;">
+      <span class="sidebar-card-label">From The Edit</span>
+
+      <div class="related-post">
+        <div class="related-thumb related-t1"></div>
+        <div>
+          <a href="/blog/where-to-find-the-best-independent-shops-in-lisbon.html" class="related-post-title">Where to find the best independent shops in Lisbon</a>
+          <span class="related-post-cat">Lisbon Life</span>
+        </div>
+      </div>
+
+      <div class="related-post">
+        <div class="related-thumb related-t2"></div>
+        <div>
+          <a href="/blog/what-to-give-someone-who-has-just-moved-abroad.html" class="related-post-title">What to give someone who has just moved abroad</a>
+          <span class="related-post-cat">Occasions</span>
+        </div>
+      </div>
+
+      <div class="related-post">
+        <div class="related-thumb related-t3"></div>
+        <div>
+          <a href="/blog/gifts-for-people-who-are-impossible-to-buy-for.html" class="related-post-title">Gifts for people who are impossible to buy for</a>
+          <span class="related-post-cat">Gift Guides</span>
+        </div>
+      </div>
+
+    </div>
+
+  </aside>
+
+</div>
+
+<div id="footer-mount"></div>
+
+<script src="/js/components.js"></script>
+</body>
+</html>

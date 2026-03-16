@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Gift Boxes — Curated Gift Boxes from Lisbon | Concierge Bar</title>
+<meta name="description" content="Five curated gift box themes — Cosy, Foodie, Wellness, Creative Dreamer, Wanderer — shipped across Europe. Made to order, packed by hand in Lisbon.">
+<link rel="canonical" href="https://concierge.bar/gift-boxes.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300;1,9..144,400&family=DM+Sans:wght@200;300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/global.css">
+<style>
+.boxes-section { background: var(--cream); padding: 80px 48px 120px; }
+.boxes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-bottom: 3px; }
+.box-card {
+  position: relative; overflow: hidden; min-height: 420px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 48px 40px; transition: transform 0.4s ease; cursor: pointer;
+}
+.box-card:hover { transform: scale(1.01); }
+.box-card-bg { position: absolute; inset: 0; z-index: 0; transition: transform 0.6s ease; }
+.box-card:hover .box-card-bg { transform: scale(1.04); }
+.box-cosy .box-card-bg    { background: linear-gradient(145deg, #C8B89A 0%, #E8D5B0 40%, #D4A574 100%); }
+.box-foodie .box-card-bg  { background: linear-gradient(145deg, #2D4A2D 0%, #4A7A3D 40%, #8B5E2A 100%); }
+.box-wellness .box-card-bg { background: linear-gradient(145deg, #7A9E9F 0%, #B0CCC8 40%, #E8D5C0 100%); }
+.box-creative .box-card-bg { background: linear-gradient(145deg, #4A2D5A 0%, #8B4A7A 40%, #C86A8B 100%); }
+.box-wanderer .box-card-bg { background: linear-gradient(145deg, #2A3F6A 0%, #4A6A8A 40%, #8BA5B8 100%); }
+.box-custom .box-card-bg { background: var(--navy); }
+.box-custom .box-card-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(45deg, rgba(192,32,42,0.05) 0px, rgba(192,32,42,0.05) 1px, transparent 1px, transparent 20px);
+}
+.box-card-content { position: relative; z-index: 1; }
+.box-card-num { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
+.box-card-name { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 300; font-style: italic; color: #fff; line-height: 1.1; margin-bottom: 12px; }
+.box-card-desc { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.7; font-weight: 300; margin-bottom: 28px; max-width: 280px; }
+.box-card-link { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.9); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: gap 0.25s; }
+.box-card-link:hover { gap: 16px; }
+.box-card-link::after { content: '→'; font-size: 12px; }
+
+/* Tiers */
+.box-tiers { background: var(--cream-mid); padding: 100px 48px; }
+.tiers-header { text-align: center; margin-bottom: 72px; }
+.tiers-header p { color: var(--text-mid); font-size: 16px; max-width: 480px; margin: 24px auto 0; line-height: 1.7; }
+.tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; max-width: 900px; margin: 0 auto; }
+.tier-card { background: var(--cream); padding: 48px 40px; border: 1px solid rgba(26,43,74,0.08); position: relative; }
+.tier-card.tier-featured { background: var(--navy); }
+.tier-badge { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--crimson); margin-bottom: 12px; display: block; }
+.tier-name { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 300; font-style: italic; color: var(--navy); margin-bottom: 8px; }
+.tier-card.tier-featured .tier-name { color: var(--champagne); }
+.tier-price { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: var(--text-light); margin-bottom: 32px; }
+.tier-card.tier-featured .tier-price { color: rgba(245,230,200,0.5); }
+.tier-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+.tier-features li { font-size: 13px; color: var(--text-mid); display: flex; align-items: flex-start; gap: 12px; line-height: 1.5; }
+.tier-card.tier-featured .tier-features li { color: rgba(245,230,200,0.7); }
+.tier-features li::before { content: '—'; color: var(--crimson); flex-shrink: 0; font-family: 'DM Mono', monospace; font-size: 11px; }
+
+@media (max-width: 1024px) { .boxes-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 768px) {
+  .boxes-section { padding: 80px 24px; }
+  .boxes-grid { grid-template-columns: 1fr; }
+  .tiers-grid { grid-template-columns: 1fr; }
+  .box-tiers { padding: 80px 24px; }
+}
+</style>
+</head>
+<body>
+<div id="nav-mount"></div>
+
+<div class="page-hero">
+  <p class="page-hero-eyebrow">Gift Boxes</p>
+  <h1 class="page-hero-heading">Five themes.<br><em>One intention.</em></h1>
+  <p class="page-hero-sub">Each box begins with a feeling — warmth, flavour, wellness, creativity, wanderlust. Nothing is off-the-shelf. Everything is made to order, shipped across Europe.</p>
+</div>
+
+<section class="boxes-section">
+  <div class="boxes-grid">
+
+    <div class="box-card box-cosy reveal">
+      <div class="box-card-bg"></div>
+      <div class="box-card-content">
+        <div class="box-card-num">01</div>
+        <div class="box-card-name">The Cosy One</div>
+        <p class="box-card-desc">For the person who deserves a night in. Soft things, warm things, things that say slow down. Portuguese ceramics, artisan candles, locally-sourced teas.</p>
+        <a href="/contact.html" class="box-card-link">Enquire</a>
+      </div>
+    </div>
+
+    <div class="box-card box-foodie reveal reveal-delay-1">
+      <div class="box-card-bg"></div>
+      <div class="box-card-content">
+        <div class="box-card-num">02</div>
+        <div class="box-card-name">The Foodie One</div>
+        <p class="box-card-desc">Portugal's pantry — the finest conservas, olive oils, wines, and flavours you can't find elsewhere. For the person who eats their way through everything.</p>
+        <a href="/contact.html" class="box-card-link">Enquire</a>
+      </div>
+    </div>
+
+    <div class="box-card box-wellness reveal reveal-delay-2">
+      <div class="box-card-bg"></div>
+      <div class="box-card-content">
+        <div class="box-card-num">03</div>
+        <div class="box-card-name">The Wellness One</div>
+        <p class="box-card-desc">Thoughtful, not generic. Natural skincare, artisan botanicals, and gentle luxuries — curated for someone who takes their wellbeing seriously.</p>
+        <a href="/contact.html" class="box-card-link">Enquire</a>
+      </div>
+    </div>
+
+    <div class="box-card box-creative reveal">
+      <div class="box-card-bg"></div>
+      <div class="box-card-content">
+        <div class="box-card-num">04</div>
+        <div class="box-card-name">The Creative Dreamer</div>
+        <p class="box-card-desc">For the person who makes things, draws things, writes things, thinks in images. Beautiful tools, local art, notebooks, things that spark something.</p>
+        <a href="/contact.html" class="box-card-link">Enquire</a>
+      </div>
+    </div>
+
+    <div class="box-card box-wanderer reveal reveal-delay-1">
+      <div class="box-card-bg"></div>
+      <div class="box-card-content">
+        <div class="box-card-num">05</div>
+        <div class="box-card-name">The Wanderer</div>
+        <p class="box-card-desc">For the person who is always somewhere else, or always wishes they were. A piece of Lisbon to carry — or to send across the continent.</p>
+        <a href="/contact.html" class="box-card-link">Enquire</a>
+      </div>
+    </div>
+
+    <div class="box-card box-custom reveal reveal-delay-2">
+      <div class="box-card-bg"></div>
+      <div class="box-card-content">
+        <div class="box-card-num">06</div>
+        <div class="box-card-name">Custom Curation</div>
+        <p class="box-card-desc">None of the above quite fit? Tell us about the person, the occasion, the feeling. We'll build something around that.</p>
+        <a href="/contact.html" class="box-card-link">Start a conversation</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="box-tiers">
+  <div class="tiers-header reveal">
+    <span class="section-label">Choose your tier</span>
+    <h2 class="section-heading">Simple, Classic, <em>Luxe.</em></h2>
+    <p>Every box theme is available in three tiers. The theme stays the same — the depth, the quality, and the spend changes.</p>
+  </div>
+  <div class="tiers-grid">
+    <div class="tier-card reveal">
+      <span class="tier-badge">Entry</span>
+      <div class="tier-name">Simple</div>
+      <div class="tier-price">From €65</div>
+      <ul class="tier-features">
+        <li>3–4 carefully chosen items</li>
+        <li>Branded tissue and ribbon</li>
+        <li>Handwritten note card</li>
+        <li>Shipped across Europe</li>
+      </ul>
+      <a href="/contact.html" class="btn-ghost">Enquire</a>
+    </div>
+    <div class="tier-card tier-featured reveal reveal-delay-1">
+      <span class="tier-badge" style="color:var(--crimson)">Most popular</span>
+      <div class="tier-name">Classic</div>
+      <div class="tier-price">From €120</div>
+      <ul class="tier-features">
+        <li>5–7 curated items</li>
+        <li>Premium branded box</li>
+        <li>Handwritten note card</li>
+        <li>Gift message &amp; wrapping</li>
+        <li>Shipped across Europe</li>
+      </ul>
+      <a href="/contact.html" class="btn-primary" style="display:inline-block;">Enquire</a>
+    </div>
+    <div class="tier-card reveal reveal-delay-2">
+      <span class="tier-badge">Premium</span>
+      <div class="tier-name">Luxe</div>
+      <div class="tier-price">From €220</div>
+      <ul class="tier-features">
+        <li>8–12 premium items</li>
+        <li>Luxury keepsake box</li>
+        <li>Personalised letter</li>
+        <li>Add-on experiences available</li>
+        <li>Priority curation &amp; delivery</li>
+      </ul>
+      <a href="/contact.html" class="btn-ghost">Enquire</a>
+    </div>
+  </div>
+</div>
+
+<div id="footer-mount"></div>
+<script src="/js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>The Edit — Gift Ideas, Lisbon Life & Concierge Insights | Concierge Bar</title>
+<meta name="description" content="Gift guides, Lisbon recommendations, and thoughtful ideas from the Concierge Bar team. Because the best gifts come with a bit of research.">
+<link rel="canonical" href="https://concierge.bar/blog.html">
+<meta property="og:title" content="The Edit — Concierge Bar Journal">
+<meta property="og:description" content="Gift guides, Lisbon life, and the art of giving well.">
+<meta property="og:type" content="website">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300;1,9..144,400&family=DM+Sans:wght@200;300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/global.css">
+<style>
+
+/* ── BLOG GRID ── */
+.blog-section { padding: 100px 48px 120px; background: var(--cream); }
+
+.blog-filters {
+  display: flex; gap: 8px; margin-bottom: 64px; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.6s ease 0.3s forwards;
+}
+.filter-btn {
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em;
+  text-transform: uppercase; border: 1px solid rgba(26,43,74,0.15);
+  background: transparent; color: var(--text-mid); padding: 10px 20px;
+  cursor: pointer; transition: all 0.2s;
+}
+.filter-btn:hover, .filter-btn.active { background: var(--navy); color: var(--champagne); border-color: var(--navy); }
+
+.blog-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;
+}
+
+/* Featured post - spans 2 columns */
+.post-card { position: relative; overflow: hidden; background: var(--cream-mid); display: flex; flex-direction: column; transition: transform 0.35s ease; }
+.post-card:hover { transform: translateY(-4px); }
+.post-card.featured { grid-column: span 2; }
+
+.post-image {
+  width: 100%; aspect-ratio: 16/9; overflow: hidden;
+  background: var(--champagne); position: relative;
+}
+.post-card.featured .post-image { aspect-ratio: 21/9; }
+
+/* Gradient placeholder images */
+.post-img-1 { background: linear-gradient(135deg, var(--champagne) 0%, var(--butter) 60%, rgba(192,32,42,0.15) 100%); }
+.post-img-2 { background: linear-gradient(135deg, #E8D5C0 0%, #D4A99A 100%); }
+.post-img-3 { background: linear-gradient(135deg, var(--navy) 0%, #1A3A5C 60%, rgba(224,37,106,0.2) 100%); }
+.post-img-4 { background: linear-gradient(135deg, var(--cream-mid) 0%, var(--champagne) 100%); }
+.post-img-5 { background: linear-gradient(135deg, #2A1620 0%, var(--navy) 100%); }
+.post-img-6 { background: linear-gradient(135deg, rgba(224,37,106,0.15) 0%, var(--champagne) 100%); }
+
+.post-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(26,43,74,0.4) 0%, transparent 60%);
+}
+
+.post-body { padding: 32px 36px 40px; flex: 1; display: flex; flex-direction: column; }
+
+.post-meta {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 16px;
+}
+.post-category {
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--crimson);
+}
+.post-date {
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.15em;
+  color: var(--text-light);
+}
+.post-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-light); }
+
+.post-title {
+  font-family: 'Fraunces', serif; font-weight: 300; font-style: italic;
+  color: var(--navy); line-height: 1.2; margin-bottom: 14px;
+  text-decoration: none; display: block; transition: color 0.2s;
+}
+.post-title:hover { color: var(--crimson); }
+.post-card.featured .post-title { font-size: clamp(22px, 2.5vw, 32px); }
+.post-title { font-size: clamp(18px, 1.8vw, 22px); }
+
+.post-excerpt { font-size: 14px; color: var(--text-mid); line-height: 1.7; font-weight: 300; margin-bottom: 24px; flex: 1; }
+
+.post-read-more {
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--navy); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: gap 0.25s, color 0.2s; margin-top: auto;
+}
+.post-read-more:hover { gap: 14px; color: var(--crimson); }
+.post-read-more::after { content: '→'; font-size: 12px; }
+
+/* Newsletter strip */
+.newsletter-strip {
+  background: var(--navy); padding: 80px 48px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.newsletter-heading { font-family: 'Fraunces', serif; font-size: clamp(28px, 3vw, 42px); font-weight: 300; font-style: italic; color: var(--champagne); line-height: 1.15; margin-bottom: 16px; }
+.newsletter-sub { font-size: 15px; color: rgba(245,230,200,0.55); line-height: 1.7; font-weight: 300; }
+.newsletter-form { display: flex; gap: 0; }
+.newsletter-input {
+  flex: 1; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(245,230,200,0.15);
+  border-right: none; color: var(--champagne); padding: 16px 24px;
+  outline: none; transition: border-color 0.2s;
+}
+.newsletter-input::placeholder { color: rgba(245,230,200,0.3); }
+.newsletter-input:focus { border-color: rgba(192,32,42,0.5); }
+.newsletter-submit {
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.18em;
+  text-transform: uppercase; background: var(--crimson); color: var(--cream);
+  border: none; padding: 16px 28px; cursor: pointer; transition: background 0.25s; white-space: nowrap;
+}
+.newsletter-submit:hover { background: var(--champagne); color: var(--navy); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .blog-grid { grid-template-columns: 1fr 1fr; }
+  .post-card.featured { grid-column: span 2; }
+  .newsletter-strip { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 768px) {
+  .blog-section { padding: 80px 24px; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .post-card.featured { grid-column: span 1; }
+  .newsletter-strip { padding: 60px 24px; }
+  .newsletter-form { flex-direction: column; }
+  .newsletter-input { border-right: 1px solid rgba(245,230,200,0.15); border-bottom: none; }
+}
+</style>
+</head>
+<body>
+
+<div id="nav-mount"></div>
+
+<!-- ── HERO ── -->
+<div class="page-hero">
+  <div class="page-hero-eyebrow">The Edit</div>
+  <h1 class="page-hero-heading">Stories worth<br><em>reading.</em></h1>
+  <p class="page-hero-sub">Gift guides, Lisbon life, and everything in between. Because giving well starts with thinking well.</p>
+</div>
+
+<!-- ── BLOG SECTION ── -->
+<section class="blog-section">
+
+  <!-- Filters -->
+  <div class="blog-filters">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Gift Guides</button>
+    <button class="filter-btn">Lisbon Life</button>
+    <button class="filter-btn">Occasions</button>
+    <button class="filter-btn">Behind the Bar</button>
+  </div>
+
+  <!-- Grid -->
+  <div class="blog-grid">
+
+    <!-- Featured post -->
+    <article class="post-card featured reveal">
+      <div class="post-image post-img-1">
+        <div class="post-img-overlay"></div>
+      </div>
+      <div class="post-body">
+        <div class="post-meta">
+          <span class="post-category">Gift Guides</span>
+          <span class="post-meta-dot"></span>
+          <span class="post-date">March 2025</span>
+        </div>
+        <a href="/blog/the-art-of-giving-something-personal.html" class="post-title">The art of giving something that actually feels personal</a>
+        <p class="post-excerpt">Most gifts say "I thought of you." The good ones say "I noticed you." Here's the difference — and how we build around it when someone sends us a brief.</p>
+        <a href="/blog/the-art-of-giving-something-personal.html" class="post-read-more">Read the piece</a>
+      </div>
+    </article>
+
+    <!-- Post 2 -->
+    <article class="post-card reveal reveal-delay-1">
+      <div class="post-image post-img-2">
+        <div class="post-img-overlay"></div>
+      </div>
+      <div class="post-body">
+        <div class="post-meta">
+          <span class="post-category">Lisbon Life</span>
+          <span class="post-meta-dot"></span>
+          <span class="post-date">February 2025</span>
+        </div>
+        <a href="/blog/where-to-find-the-best-independent-shops-in-lisbon.html" class="post-title">Where to find the best independent shops in Lisbon</a>
+        <p class="post-excerpt">The city has more than pastéis de nata. Our shortlist of the makers, ceramicists, and small shops worth tracking down.</p>
+        <a href="/blog/where-to-find-the-best-independent-shops-in-lisbon.html" class="post-read-more">Read the piece</a>
+      </div>
+    </article>
+
+    <!-- Post 3 -->
+    <article class="post-card reveal">
+      <div class="post-image post-img-3">
+        <div class="post-img-overlay"></div>
+      </div>
+      <div class="post-body">
+        <div class="post-meta">
+          <span class="post-category">Occasions</span>
+          <span class="post-meta-dot"></span>
+          <span class="post-date">January 2025</span>
+        </div>
+        <a href="/blog/what-to-give-someone-who-has-just-moved-abroad.html" class="post-title">What to give someone who has just moved abroad</a>
+        <p class="post-excerpt">They've left familiar places behind. A gift that acknowledges that — rather than ignoring it — lands completely differently.</p>
+        <a href="/blog/what-to-give-someone-who-has-just-moved-abroad.html" class="post-read-more">Read the piece</a>
+      </div>
+    </article>
+
+    <!-- Post 4 -->
+    <article class="post-card reveal reveal-delay-1">
+      <div class="post-image post-img-4">
+        <div class="post-img-overlay"></div>
+      </div>
+      <div class="post-body">
+        <div class="post-meta">
+          <span class="post-category">Behind the Bar</span>
+          <span class="post-meta-dot"></span>
+          <span class="post-date">January 2025</span>
+        </div>
+        <a href="/blog/how-we-put-a-gift-box-together.html" class="post-title">How we actually put a gift box together</a>
+        <p class="post-excerpt">The brief, the sourcing, the editing out of things that don't belong. What it looks like when curation is taken seriously.</p>
+        <a href="/blog/how-we-put-a-gift-box-together.html" class="post-read-more">Read the piece</a>
+      </div>
+    </article>
+
+    <!-- Post 5 -->
+    <article class="post-card reveal reveal-delay-2">
+      <div class="post-image post-img-5">
+        <div class="post-img-overlay"></div>
+      </div>
+      <div class="post-body">
+        <div class="post-meta">
+          <span class="post-category">Gift Guides</span>
+          <span class="post-meta-dot"></span>
+          <span class="post-date">December 2024</span>
+        </div>
+        <a href="/blog/gifts-for-people-who-are-impossible-to-buy-for.html" class="post-title">Gifts for people who are impossible to buy for</a>
+        <p class="post-excerpt">They already have everything. Or so they say. What to do when the usual playbook runs out.</p>
+        <a href="/blog/gifts-for-people-who-are-impossible-to-buy-for.html" class="post-read-more">Read the piece</a>
+      </div>
+    </article>
+
+    <!-- Post 6 -->
+    <article class="post-card reveal reveal-delay-3">
+      <div class="post-image post-img-6">
+        <div class="post-img-overlay"></div>
+      </div>
+      <div class="post-body">
+        <div class="post-meta">
+          <span class="post-category">Lisbon Life</span>
+          <span class="post-meta-dot"></span>
+          <span class="post-date">November 2024</span>
+        </div>
+        <a href="/blog/the-expat-guide-to-gifting-from-lisbon.html" class="post-title">The expat guide to gifting from Lisbon</a>
+        <p class="post-excerpt">Living here but shopping for people back home — or elsewhere in Europe. A practical and personal guide.</p>
+        <a href="/blog/the-expat-guide-to-gifting-from-lisbon.html" class="post-read-more">Read the piece</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ── NEWSLETTER ── -->
+<div class="newsletter-strip reveal">
+  <div>
+    <h2 class="newsletter-heading">The Edit, delivered.</h2>
+    <p class="newsletter-sub">New pieces, gift ideas, and Lisbon finds — a few times a month. No noise, no filler.</p>
+  </div>
+  <div>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" class="newsletter-input" placeholder="Your email address">
+      <button type="submit" class="newsletter-submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<div id="footer-mount"></div>
+
+<script src="/js/components.js"></script>
+<script>
+// Filter buttons (visual only — CMS will handle filtering in production)
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Services — Gift Curation, Personal Shopping & Lifestyle Management | Concierge Bar</title>
+<meta name="description" content="Gift curation, personal shopping, and lifestyle management in Lisbon. Everything handled properly, by someone who actually knows the city.">
+<link rel="canonical" href="https://concierge.bar/services.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300;1,9..144,400&family=DM+Sans:wght@200;300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/global.css">
+<style>
+.services-intro-section {
+  background: var(--cream); padding: 100px 48px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;
+}
+.services-intro-text p { font-size: 16px; color: var(--text-mid); line-height: 1.8; margin-top: 24px; font-weight: 300; }
+.services-intro-aside { border-left: 1px solid rgba(26,43,74,0.12); padding-left: 60px; }
+.services-intro-aside blockquote { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 200; font-style: italic; color: var(--navy); line-height: 1.35; margin-bottom: 24px; }
+.services-intro-aside cite { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-light); font-style: normal; }
+
+.service-detail { padding: 100px 48px; }
+.service-detail:nth-child(even) { background: var(--cream-mid); }
+.service-detail-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; max-width: 1200px; margin: 0 auto; }
+.service-detail:nth-child(even) .service-detail-inner { direction: rtl; }
+.service-detail:nth-child(even) .service-detail-content { direction: ltr; }
+.service-detail:nth-child(even) .service-visual-card { direction: ltr; }
+.service-detail-num { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.25em; color: var(--crimson); margin-bottom: 16px; display: block; }
+.service-detail-name { font-family: 'Fraunces', serif; font-size: 44px; font-weight: 300; font-style: italic; color: var(--navy); line-height: 1.1; margin-bottom: 24px; }
+.service-detail-body { font-size: 15px; color: var(--text-mid); line-height: 1.85; font-weight: 300; margin-bottom: 40px; }
+.service-detail-features { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+.service-detail-features li { font-size: 13px; color: var(--text-mid); display: flex; gap: 16px; align-items: flex-start; line-height: 1.6; }
+.service-detail-features li::before { content: '—'; color: var(--crimson); font-family: 'DM Mono', monospace; flex-shrink: 0; }
+.service-visual-card { min-height: 480px; position: relative; overflow: hidden; }
+.svc-visual-1 { background: linear-gradient(145deg, #2A3F6A 0%, #1A2B4A 50%, #C0202A 100%); }
+.svc-visual-2 { background: linear-gradient(145deg, #8B5E2A 0%, #C8A96E 50%, #F5E6C8 100%); }
+.svc-visual-3 { background: linear-gradient(145deg, #2D2D2D 0%, #4A4A4A 50%, #8A8A8A 100%); }
+.svc-visual-label { position: absolute; bottom: 40px; left: 40px; font-family: 'Fraunces', serif; font-size: 24px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.8); }
+.svc-visual-tag { position: absolute; top: 40px; right: 40px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); writing-mode: vertical-rl; }
+
+@media (max-width: 1024px) {
+  .services-intro-section { grid-template-columns: 1fr; gap: 48px; }
+  .services-intro-aside { border-left: none; padding-left: 0; border-top: 1px solid rgba(26,43,74,0.12); padding-top: 48px; }
+  .service-detail-inner { grid-template-columns: 1fr; gap: 48px; }
+  .service-detail:nth-child(even) .service-detail-inner { direction: ltr; }
+  .service-visual-card { min-height: 300px; }
+}
+@media (max-width: 768px) {
+  .services-intro-section, .service-detail { padding: 80px 24px; }
+}
+</style>
+</head>
+<body>
+<div id="nav-mount"></div>
+
+<div class="page-hero">
+  <p class="page-hero-eyebrow">Services</p>
+  <h1 class="page-hero-heading">More than<br><em>a gift box.</em></h1>
+  <p class="page-hero-sub">For those who live in Lisbon — or who want to. A concierge service built around the things that matter, handled properly.</p>
+</div>
+
+<div class="services-intro-section">
+  <div class="services-intro-text reveal">
+    <span class="section-label">How we work</span>
+    <h2 class="section-heading">Sourced, handled,<br><em>delivered.</em></h2>
+    <p>We don't hold inventory. Every curation, every purchase, every arrangement is done on request — which means everything is considered rather than compiled. You reach out, we figure out the right approach together, and we take it from there.</p>
+    <p style="margin-top: 16px;">Concierge Bar operates as a sourcing and management service. We work directly with local artisans, producers, and suppliers in Lisbon — and with a trusted network across Europe for shipping.</p>
+  </div>
+  <div class="services-intro-aside reveal reveal-delay-2">
+    <blockquote>"We exist for the people who care about how things are done — not just what gets done."</blockquote>
+    <cite>Concierge Bar — Lisbon</cite>
+  </div>
+</div>
+
+<!-- Service 1: Gift Curation -->
+<div class="service-detail">
+  <div class="service-detail-inner">
+    <div class="service-detail-content reveal">
+      <span class="service-detail-num">01 — Service</span>
+      <div class="service-detail-name">Gift Curation</div>
+      <p class="service-detail-body">Gift curation is a craft. It starts with knowing who the gift is for — really knowing — and building something around that. We source from local Lisbon artisans and makers, from markets and small producers, from places most people don't know exist. What you receive is something that couldn't have been assembled off a shelf.</p>
+      <ul class="service-detail-features">
+        <li>Five curated themes: Cosy, Foodie, Wellness, Creative Dreamer, Wanderer</li>
+        <li>Three tiers: Simple, Classic, Luxe — from €65 to €220+</li>
+        <li>Custom curation available for briefs that don't fit a theme</li>
+        <li>Shipped across Europe, free delivery within Lisbon</li>
+        <li>Every box packed and finished by hand</li>
+      </ul>
+      <a href="/contact.html" class="btn-primary">Request a curation</a>
+    </div>
+    <div class="service-visual-card svc-visual-1 reveal reveal-delay-2">
+      <span class="svc-visual-tag">Gift Curation</span>
+      <div class="svc-visual-label">Curated,<br>not compiled.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Service 2: Personal Shopping -->
+<div class="service-detail">
+  <div class="service-detail-inner">
+    <div class="service-detail-content reveal">
+      <span class="service-detail-num">02 — Service</span>
+      <div class="service-detail-name">Personal Shopping</div>
+      <p class="service-detail-body">You know what you need — or almost. You've seen something, read about something, or you simply know the kind of thing you want but not where to find it. We do the sourcing, the comparing, the queuing. You receive exactly what's right, without the legwork.</p>
+      <ul class="service-detail-features">
+        <li>Fashion, homewares, books, specialty food and drink</li>
+        <li>Sourced locally in Lisbon or across Europe</li>
+        <li>We compare options and present a short edit before purchasing</li>
+        <li>Transparent pricing — you pay for the item, we charge for our time</li>
+        <li>Delivered to your door or held for collection</li>
+      </ul>
+      <a href="/contact.html" class="btn-primary">Send us a brief</a>
+    </div>
+    <div class="service-visual-card svc-visual-2 reveal reveal-delay-2">
+      <span class="svc-visual-tag">Personal Shopping</span>
+      <div class="svc-visual-label">Found,<br>for you.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Service 3: Lifestyle Management -->
+<div class="service-detail">
+  <div class="service-detail-inner">
+    <div class="service-detail-content reveal">
+      <span class="service-detail-num">03 — Service</span>
+      <div class="service-detail-name">Lifestyle Management</div>
+      <p class="service-detail-body">A retainer relationship for expats and busy Lisbon residents. The kind of support that makes the city feel manageable — and enjoyable again. Whether you need errands handled, recommendations you can trust, or someone who knows the city well enough to make things happen, this is for you.</p>
+      <ul class="service-detail-features">
+        <li>Monthly retainer — scoped to your needs</li>
+        <li>Appointments, reservations, and logistics</li>
+        <li>Local recommendations and research</li>
+        <li>Expat-specific support: navigating Portuguese bureaucracy, sourcing English-speaking services</li>
+        <li>WhatsApp-first communication, async-friendly</li>
+      </ul>
+      <a href="/contact.html" class="btn-primary">Talk to us</a>
+    </div>
+    <div class="service-visual-card svc-visual-3 reveal reveal-delay-2">
+      <span class="svc-visual-tag">Lifestyle Management</span>
+      <div class="svc-visual-label">Lisbon,<br>handled.</div>
+    </div>
+  </div>
+</div>
+
+<div id="footer-mount"></div>
+<script src="/js/components.js"></script>
+</body>
+</html>
