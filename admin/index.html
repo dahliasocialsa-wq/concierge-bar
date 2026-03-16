@@ -6,6 +6,7 @@
     <title>Concierge Bar — Content Manager</title>
   </head>
   <body>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
       window.CMS_MANUAL_INIT = true;
     </script>
@@ -14,10 +15,8 @@
       CMS.init({
         config: {
           backend: {
-            name: 'github',
-            repo: 'dahliasocialsa-wq/concierge-bar',
+            name: 'git-gateway',
             branch: 'main',
-            base_url: 'https://helpful-naiad-0e21cb.netlify.app',
           },
           media_folder: 'images/uploads',
           collections: [
