@@ -1,0 +1,18 @@
+{
+  "name": "concierge-bar",
+  "version": "1.0.0",
+  "description": "**Stack:** Pure HTML/CSS/JS → Vercel (static hosting)   **CMS ready:** Plug in Tina CMS or Keystatic for blog content management",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tinacms": "^3.6.1"
+  },
+  "devDependencies": {
+    "@tinacms/cli": "^2.1.9"
+  }
+}
