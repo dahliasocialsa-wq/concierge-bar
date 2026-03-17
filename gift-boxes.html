@@ -4,189 +4,177 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
-<title>Gift Boxes — Curated Gift Boxes from Lisbon | Concierge Bar</title>
-<meta name="description" content="Five curated gift box themes — Cosy, Foodie, Wellness, Creative Dreamer, Wanderer — shipped across Europe. Made to order, packed by hand in Lisbon.">
+<title>Gift Curation — Custom Gift Boxes | Concierge Bar</title>
+<meta name="description" content="Custom gift curation from Lisbon. Every box starts with a conversation, not a catalogue. Tell us who it's for and we'll build something around that.">
 <link rel="canonical" href="https://concierge.bar/gift-boxes.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300;1,9..144,400&family=DM+Sans:wght@200;300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300;1,9..144,400&family=DM+Sans:wght@200;300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/global.css">
 <style>
-.boxes-section { background: var(--cream); padding: 80px 48px 120px; }
-.boxes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-bottom: 3px; }
-.box-card {
-  position: relative; overflow: hidden; min-height: 420px;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 48px 40px; transition: transform 0.4s ease; cursor: pointer;
-}
-.box-card:hover { transform: scale(1.01); }
-.box-card-bg { position: absolute; inset: 0; z-index: 0; transition: transform 0.6s ease; }
-.box-card:hover .box-card-bg { transform: scale(1.04); }
-.box-cosy .box-card-bg    { background: linear-gradient(145deg, #C8B89A 0%, #E8D5B0 40%, #D4A574 100%); }
-.box-foodie .box-card-bg  { background: linear-gradient(145deg, #2D4A2D 0%, #4A7A3D 40%, #8B5E2A 100%); }
-.box-wellness .box-card-bg { background: linear-gradient(145deg, #7A9E9F 0%, #B0CCC8 40%, #E8D5C0 100%); }
-.box-creative .box-card-bg { background: linear-gradient(145deg, #4A2D5A 0%, #8B4A7A 40%, #C86A8B 100%); }
-.box-wanderer .box-card-bg { background: linear-gradient(145deg, #2A3F6A 0%, #4A6A8A 40%, #8BA5B8 100%); }
-.box-custom .box-card-bg { background: var(--navy); }
-.box-custom .box-card-bg::after {
-  content: ''; position: absolute; inset: 0;
-  background: repeating-linear-gradient(45deg, rgba(192,32,42,0.05) 0px, rgba(192,32,42,0.05) 1px, transparent 1px, transparent 20px);
-}
-.box-card-content { position: relative; z-index: 1; }
-.box-card-num { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
-.box-card-name { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 300; font-style: italic; color: #fff; line-height: 1.1; margin-bottom: 12px; }
-.box-card-desc { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.7; font-weight: 300; margin-bottom: 28px; max-width: 280px; }
-.box-card-link { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.9); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: gap 0.25s; }
-.box-card-link:hover { gap: 16px; }
-.box-card-link::after { content: '→'; font-size: 12px; }
 
-/* Tiers */
-.box-tiers { background: var(--cream-mid); padding: 100px 48px; }
-.tiers-header { text-align: center; margin-bottom: 72px; }
-.tiers-header p { color: var(--text-mid); font-size: 16px; max-width: 480px; margin: 24px auto 0; line-height: 1.7; }
-.tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; max-width: 900px; margin: 0 auto; }
-.tier-card { background: var(--cream); padding: 48px 40px; border: 1px solid rgba(26,43,74,0.08); position: relative; }
-.tier-card.tier-featured { background: var(--navy); }
-.tier-badge { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--crimson); margin-bottom: 12px; display: block; }
-.tier-name { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 300; font-style: italic; color: var(--navy); margin-bottom: 8px; }
-.tier-card.tier-featured .tier-name { color: var(--champagne); }
-.tier-price { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: var(--text-light); margin-bottom: 32px; }
-.tier-card.tier-featured .tier-price { color: rgba(245,230,200,0.5); }
-.tier-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
-.tier-features li { font-size: 13px; color: var(--text-mid); display: flex; align-items: flex-start; gap: 12px; line-height: 1.5; }
-.tier-card.tier-featured .tier-features li { color: rgba(245,230,200,0.7); }
-.tier-features li::before { content: '—'; color: var(--crimson); flex-shrink: 0; font-family: 'DM Mono', monospace; font-size: 11px; }
+/* ── Curation intro ── */
+.curation-intro {
+  background: var(--cream); padding: 100px 48px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;
+}
+.curation-intro-text p { font-size: 16px; color: var(--text-mid); line-height: 1.8; margin-top: 24px; font-weight: 300; }
+.curation-intro-aside { border-left: 1px solid rgba(26,43,74,0.12); padding-left: 60px; }
+.curation-intro-aside blockquote {
+  font-family: 'Fraunces', serif; font-size: 28px; font-weight: 200;
+  font-style: italic; color: var(--navy); line-height: 1.35; margin-bottom: 24px;
+}
+.curation-intro-aside cite {
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--text-light); font-style: normal;
+}
 
-@media (max-width: 1024px) { .boxes-grid { grid-template-columns: 1fr 1fr; } }
+/* ── 4-point cards ── */
+.curation-points { background: var(--cream-mid); padding: 100px 48px; }
+.curation-points-header { margin-bottom: 64px; }
+.curation-points-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
+.curation-point-card { background: var(--cream); padding: 48px 36px; border: 1px solid rgba(26,43,74,0.07); }
+.curation-point-num {
+  font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 500; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--crimson); margin-bottom: 24px; display: block;
+}
+.curation-point-title {
+  font-family: 'Fraunces', serif; font-size: 22px; font-weight: 300;
+  font-style: italic; color: var(--navy); line-height: 1.2; margin-bottom: 16px;
+}
+.curation-point-body { font-size: 14px; color: var(--text-mid); line-height: 1.75; font-weight: 300; }
+
+/* ── How it works ── */
+.how-section { background: var(--cream); padding: 120px 48px; }
+.how-header { text-align: center; margin-bottom: 80px; }
+.how-grid { display: grid; grid-template-columns: repeat(4, 1fr); position: relative; }
+.how-grid::before {
+  content: ''; position: absolute; top: 28px; left: 12.5%; right: 12.5%; height: 1px;
+  background: rgba(26,43,74,0.12); z-index: 0;
+}
+.how-step { padding: 0 32px; position: relative; text-align: center; }
+.step-dot {
+  width: 56px; height: 56px; border-radius: 50%; background: var(--cream);
+  border: 1px solid rgba(26,43,74,0.15); display: flex; align-items: center;
+  justify-content: center; margin: 0 auto 32px; font-family: 'Fraunces', serif;
+  font-size: 20px; font-style: italic; font-weight: 300; color: var(--navy); position: relative; z-index: 1;
+}
+.step-title { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 300; font-style: italic; color: var(--navy); margin-bottom: 12px; }
+.step-desc { font-size: 13px; color: var(--text-mid); line-height: 1.7; font-weight: 300; }
+
+/* ── CTA ── */
+.curation-cta { background: var(--cream-mid); padding: 120px 48px; text-align: center; }
+.curation-cta .section-heading { margin: 20px auto 40px; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .curation-intro { grid-template-columns: 1fr; gap: 48px; }
+  .curation-intro-aside { border-left: none; padding-left: 0; border-top: 1px solid rgba(26,43,74,0.12); padding-top: 48px; }
+  .curation-points-grid { grid-template-columns: 1fr 1fr; }
+  .how-grid { grid-template-columns: 1fr 1fr; }
+  .how-grid::before { display: none; }
+}
 @media (max-width: 768px) {
-  .boxes-section { padding: 80px 24px; }
-  .boxes-grid { grid-template-columns: 1fr; }
-  .tiers-grid { grid-template-columns: 1fr; }
-  .box-tiers { padding: 80px 24px; }
+  .curation-intro { padding: 80px 24px; }
+  .curation-points { padding: 80px 24px; }
+  .curation-points-grid { grid-template-columns: 1fr; }
+  .how-section { padding: 80px 24px; }
+  .how-grid { grid-template-columns: 1fr; }
+  .how-step { text-align: left; display: flex; gap: 20px; align-items: flex-start; padding: 0; margin-bottom: 40px; }
+  .step-dot { flex-shrink: 0; margin: 0; width: 44px; height: 44px; }
+  .curation-cta { padding: 80px 24px; }
 }
 </style>
 </head>
 <body>
 <div id="nav-mount"></div>
 
+<!-- ── HERO ── -->
 <div class="page-hero">
-  <p class="page-hero-eyebrow">Gift Boxes</p>
-  <h1 class="page-hero-heading">Five themes.<br><em>One intention.</em></h1>
-  <p class="page-hero-sub">Each box begins with a feeling — warmth, flavour, wellness, creativity, wanderlust. Nothing is off-the-shelf. Everything is made to order, shipped across Europe.</p>
+  <p class="page-hero-eyebrow">Gift Curation</p>
+  <h1 class="page-hero-heading">Custom curation,<br><em>with every box.</em></h1>
+  <p class="page-hero-sub">Every gift we make starts with a conversation — not a catalogue. Tell us who it's for and we'll build something around that.</p>
 </div>
 
-<section class="boxes-section">
-  <div class="boxes-grid">
+<!-- ── WHAT CUSTOM CURATION MEANS ── -->
+<div class="curation-intro">
+  <div class="curation-intro-text reveal">
+    <span class="section-label">What we do</span>
+    <h2 class="section-heading">Not off a shelf.<br><em>Built for someone.</em></h2>
+    <p>Most gift boxes are assembled from what's available. Ours aren't. Every curation starts with a brief — who is this person, what do they love, what feeling are you trying to give them — and everything is chosen from there.</p>
+    <p style="margin-top: 16px;">That's the difference between a gift that lands and one that sits in a corner. We make the kind that lands.</p>
+  </div>
+  <div class="curation-intro-aside reveal reveal-delay-2">
+    <blockquote>"The best gifts say 'I noticed you' — not just 'I thought of you.'"</blockquote>
+    <cite>Concierge Bar</cite>
+  </div>
+</div>
 
-    <div class="box-card box-cosy reveal">
-      <div class="box-card-bg"></div>
-      <div class="box-card-content">
-        <div class="box-card-num">01</div>
-        <div class="box-card-name">The Cosy One</div>
-        <p class="box-card-desc">For the person who deserves a night in. Soft things, warm things, things that say slow down. Portuguese ceramics, artisan candles, locally-sourced teas.</p>
-        <a href="/contact.html" class="box-card-link">Enquire</a>
-      </div>
+<!-- ── WHY IT'S DIFFERENT ── -->
+<div class="curation-points">
+  <div class="curation-points-header reveal">
+    <span class="section-label">How it's different</span>
+    <h2 class="section-heading">Everything chosen<br><em>with intention.</em></h2>
+  </div>
+  <div class="curation-points-grid">
+    <div class="curation-point-card reveal">
+      <span class="curation-point-num">01</span>
+      <div class="curation-point-title">Starts with a brief</div>
+      <p class="curation-point-body">We ask about the person — what they love, how they live, what the occasion means. That brief shapes everything. No two boxes are the same because no two people are.</p>
     </div>
-
-    <div class="box-card box-foodie reveal reveal-delay-1">
-      <div class="box-card-bg"></div>
-      <div class="box-card-content">
-        <div class="box-card-num">02</div>
-        <div class="box-card-name">The Foodie One</div>
-        <p class="box-card-desc">Portugal's pantry — the finest conservas, olive oils, wines, and flavours you can't find elsewhere. For the person who eats their way through everything.</p>
-        <a href="/contact.html" class="box-card-link">Enquire</a>
-      </div>
+    <div class="curation-point-card reveal reveal-delay-1">
+      <span class="curation-point-num">02</span>
+      <div class="curation-point-title">Every item chosen with care</div>
+      <p class="curation-point-body">Nothing is filler. Every piece earns its place — chosen because it's right for this person, not because it was available or convenient.</p>
     </div>
-
-    <div class="box-card box-wellness reveal reveal-delay-2">
-      <div class="box-card-bg"></div>
-      <div class="box-card-content">
-        <div class="box-card-num">03</div>
-        <div class="box-card-name">The Wellness One</div>
-        <p class="box-card-desc">Thoughtful, not generic. Natural skincare, artisan botanicals, and gentle luxuries — curated for someone who takes their wellbeing seriously.</p>
-        <a href="/contact.html" class="box-card-link">Enquire</a>
-      </div>
+    <div class="curation-point-card reveal reveal-delay-2">
+      <span class="curation-point-num">03</span>
+      <div class="curation-point-title">Nothing pre-assembled</div>
+      <p class="curation-point-body">We don't keep stock. Every box is built fresh for each enquiry — which means you're not getting what someone else got. You're getting something made for yours.</p>
     </div>
-
-    <div class="box-card box-creative reveal">
-      <div class="box-card-bg"></div>
-      <div class="box-card-content">
-        <div class="box-card-num">04</div>
-        <div class="box-card-name">The Creative Dreamer</div>
-        <p class="box-card-desc">For the person who makes things, draws things, writes things, thinks in images. Beautiful tools, local art, notebooks, things that spark something.</p>
-        <a href="/contact.html" class="box-card-link">Enquire</a>
-      </div>
+    <div class="curation-point-card reveal reveal-delay-3">
+      <span class="curation-point-num">04</span>
+      <div class="curation-point-title">Packed and shipped with care</div>
+      <p class="curation-point-body">Packed by hand and shipped across Europe. Or delivered within Lisbon for that extra personal touch. Everything arrives as it should — beautifully.</p>
     </div>
+  </div>
+</div>
 
-    <div class="box-card box-wanderer reveal reveal-delay-1">
-      <div class="box-card-bg"></div>
-      <div class="box-card-content">
-        <div class="box-card-num">05</div>
-        <div class="box-card-name">The Wanderer</div>
-        <p class="box-card-desc">For the person who is always somewhere else, or always wishes they were. A piece of Lisbon to carry — or to send across the continent.</p>
-        <a href="/contact.html" class="box-card-link">Enquire</a>
-      </div>
+<!-- ── HOW IT WORKS ── -->
+<section class="how-section">
+  <div class="how-header reveal">
+    <span class="section-label">The process</span>
+    <h2 class="section-heading">From brief to doorstep.</h2>
+  </div>
+  <div class="how-grid">
+    <div class="how-step reveal">
+      <div class="step-dot">1</div>
+      <div class="step-title">Tell us the story</div>
+      <p class="step-desc">Share who the gift is for, the occasion, and the feeling you want to land. A few lines is enough.</p>
     </div>
-
-    <div class="box-card box-custom reveal reveal-delay-2">
-      <div class="box-card-bg"></div>
-      <div class="box-card-content">
-        <div class="box-card-num">06</div>
-        <div class="box-card-name">Custom Curation</div>
-        <p class="box-card-desc">None of the above quite fit? Tell us about the person, the occasion, the feeling. We'll build something around that.</p>
-        <a href="/contact.html" class="box-card-link">Start a conversation</a>
-      </div>
+    <div class="how-step reveal reveal-delay-1">
+      <div class="step-dot">2</div>
+      <div class="step-title">We build the edit</div>
+      <p class="step-desc">We source, select, and arrange — drawing on our network of makers, producers, and suppliers across Europe.</p>
     </div>
-
+    <div class="how-step reveal reveal-delay-2">
+      <div class="step-dot">3</div>
+      <div class="step-title">You approve</div>
+      <p class="step-desc">We share what we've put together. You sign off. We can adjust if anything doesn't land right.</p>
+    </div>
+    <div class="how-step reveal reveal-delay-3">
+      <div class="step-dot">4</div>
+      <div class="step-title">Delivered beautifully</div>
+      <p class="step-desc">Packed by hand and shipped across Europe. Or delivered in Lisbon if you'd prefer that personal touch.</p>
+    </div>
   </div>
 </section>
 
-<div class="box-tiers">
-  <div class="tiers-header reveal">
-    <span class="section-label">Choose your tier</span>
-    <h2 class="section-heading">Simple, Classic, <em>Luxe.</em></h2>
-    <p>Every box theme is available in three tiers. The theme stays the same — the depth, the quality, and the spend changes.</p>
-  </div>
-  <div class="tiers-grid">
-    <div class="tier-card reveal">
-      <span class="tier-badge">Entry</span>
-      <div class="tier-name">Simple</div>
-      <div class="tier-price">From €65</div>
-      <ul class="tier-features">
-        <li>3–4 carefully chosen items</li>
-        <li>Branded tissue and ribbon</li>
-        <li>Handwritten note card</li>
-        <li>Shipped across Europe</li>
-      </ul>
-      <a href="/contact.html" class="btn-ghost">Enquire</a>
-    </div>
-    <div class="tier-card tier-featured reveal reveal-delay-1">
-      <span class="tier-badge" style="color:var(--crimson)">Most popular</span>
-      <div class="tier-name">Classic</div>
-      <div class="tier-price">From €120</div>
-      <ul class="tier-features">
-        <li>5–7 curated items</li>
-        <li>Premium branded box</li>
-        <li>Handwritten note card</li>
-        <li>Gift message &amp; wrapping</li>
-        <li>Shipped across Europe</li>
-      </ul>
-      <a href="/contact.html" class="btn-primary" style="display:inline-block;">Enquire</a>
-    </div>
-    <div class="tier-card reveal reveal-delay-2">
-      <span class="tier-badge">Premium</span>
-      <div class="tier-name">Luxe</div>
-      <div class="tier-price">From €220</div>
-      <ul class="tier-features">
-        <li>8–12 premium items</li>
-        <li>Luxury keepsake box</li>
-        <li>Personalised letter</li>
-        <li>Add-on experiences available</li>
-        <li>Priority curation &amp; delivery</li>
-      </ul>
-      <a href="/contact.html" class="btn-ghost">Enquire</a>
-    </div>
-  </div>
+<!-- ── CTA ── -->
+<div class="curation-cta">
+  <span class="section-label">Work with us</span>
+  <h2 class="section-heading">Ready to start?</h2>
+  <a href="/contact.html" class="btn-primary">Start your enquiry</a>
 </div>
 
 <div id="footer-mount"></div>

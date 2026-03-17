@@ -3,7 +3,7 @@
    Fonts: Fraunces (serif display) + DM Sans + DM Mono
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300;1,9..144,400&family=DM+Sans:wght@200;300;400;500&family=DM+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300;1,9..144,400&family=DM+Sans:wght@200;300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap');
 
 /* ── Tokens ── */
 :root {
@@ -50,8 +50,9 @@ nav.scrolled {
 .nav-logo { text-decoration: none; display: flex; align-items: center; }
 .nav-logo span {
   font-family: 'Fraunces', serif; font-size: 22px; font-weight: 300;
-  font-style: italic; color: var(--navy); letter-spacing: 0.02em;
+  font-style: italic; color: var(--navy); letter-spacing: 0.02em; transition: color 0.2s ease;
 }
+.nav-logo:hover span { color: var(--crimson); }
 .nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
 .nav-links a {
   font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.18em;
@@ -65,6 +66,16 @@ nav.scrolled {
 .nav-links a:hover { opacity: 1; }
 .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
 .nav-links a.active { opacity: 1; }
+
+/* Inner pages: nav sits over navy .page-hero — use light colours */
+nav.navy-hero .nav-logo span { color: var(--champagne); }
+nav.navy-hero .nav-links a { color: var(--champagne); }
+nav.navy-hero .hamburger span { background: var(--champagne); }
+/* Once scrolled (cream background), revert to dark */
+nav.navy-hero.scrolled .nav-logo span { color: var(--navy); }
+nav.navy-hero.scrolled .nav-links a { color: var(--navy); }
+nav.navy-hero.scrolled .hamburger span { background: var(--navy); }
+
 .nav-cta {
   font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.18em;
   text-transform: uppercase; color: var(--cream); background: var(--navy);
@@ -125,7 +136,7 @@ nav.scrolled {
 /* ── Sections ── */
 section { padding: 120px 48px; }
 .section-label {
-  font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500;
+  font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 600;
   letter-spacing: 0.25em; text-transform: uppercase; color: var(--crimson);
   margin-bottom: 20px; display: block;
 }
@@ -145,7 +156,7 @@ section { padding: 120px 48px; }
   background: radial-gradient(circle, rgba(192,32,42,0.10) 0%, transparent 70%);
 }
 .page-hero-eyebrow {
-  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.25em;
+  font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.25em;
   text-transform: uppercase; color: rgba(192,32,42,0.8); margin-bottom: 24px;
   opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
 }

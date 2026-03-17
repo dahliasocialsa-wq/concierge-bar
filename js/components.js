@@ -43,17 +43,6 @@ const FOOTER_HTML = `
       <p class="footer-tagline">Curated gift boxes and concierge services for those who care about the detail.</p>
     </div>
     <div>
-      <div class="footer-col-title">Gift Boxes</div>
-      <ul class="footer-links">
-        <li><a href="/gift-boxes.html">The Cosy One</a></li>
-        <li><a href="/gift-boxes.html">The Foodie One</a></li>
-        <li><a href="/gift-boxes.html">The Wellness One</a></li>
-        <li><a href="/gift-boxes.html">The Creative Dreamer</a></li>
-        <li><a href="/gift-boxes.html">The Wanderer</a></li>
-        <li><a href="/contact.html">Custom Curation</a></li>
-      </ul>
-    </div>
-    <div>
       <div class="footer-col-title">Services</div>
       <ul class="footer-links">
         <li><a href="/services.html">Gift Curation</a></li>
@@ -99,6 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Nav scroll
   const nav = document.getElementById('nav');
   if (nav) {
+    if (document.querySelector('.page-hero')) {
+      nav.classList.add('navy-hero');
+    }
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 60);
     });

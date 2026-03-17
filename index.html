@@ -15,7 +15,7 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300;1,9..144,400&family=DM+Sans:wght@200;300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300;1,9..144,400&family=DM+Sans:wght@200;300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/global.css">
 <style>
 /* ── HOME-SPECIFIC STYLES ── */
@@ -30,7 +30,7 @@
   padding: 160px 64px 80px; position: relative; z-index: 2; background: var(--cream);
 }
 .hero-eyebrow {
-  font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500;
+  font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 600;
   letter-spacing: 0.25em; text-transform: uppercase; color: var(--crimson);
   margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
 }
@@ -143,7 +143,7 @@
   width: 0; height: 2px; background: var(--crimson); transition: width 0.4s ease;
 }
 .service-card:hover::before { width: 100%; }
-.service-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(192,32,42,0.6); margin-bottom: 32px; }
+.service-num { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.2em; color: var(--crimson); margin-bottom: 32px; }
 .service-name { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 300; font-style: italic; color: var(--champagne); margin-bottom: 16px; line-height: 1.2; }
 .service-desc { font-size: 14px; color: rgba(245,230,200,0.5); line-height: 1.75; font-weight: 300; margin-bottom: 36px; }
 .service-link { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--crimson); text-decoration: none; display: flex; align-items: center; gap: 10px; transition: gap 0.25s; }
@@ -186,7 +186,7 @@
 .box-foodie-card  { background: linear-gradient(150deg, #E8D5C0 0%, #D4A99A 100%); }
 .box-wanderer-card { background: linear-gradient(150deg, var(--navy) 0%, #2A1620 100%); }
 .gvc-inner { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px 32px; }
-.gvc-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(26,43,74,0.5); margin-bottom: 8px; }
+.gvc-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(26,43,74,0.5); margin-bottom: 8px; }
 .box-wanderer-card .gvc-eyebrow { color: rgba(245,230,200,0.4); }
 .gvc-name { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 300; font-style: italic; color: var(--navy); line-height: 1.2; }
 .box-wanderer-card .gvc-name { color: var(--champagne); }
